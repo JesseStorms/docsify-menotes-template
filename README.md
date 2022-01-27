@@ -45,19 +45,19 @@ You can see some examples by checking out the [Example Notebook](example/), sinc
 You can expand Docsify by using plugins! Here are some of my favorites
 
 - [docsify-example-panels](https://github.com/VagnerDomingues/docsify-example-panels)
-  - Represent content in a side-by-side fashon!
+  - Represent content in a side-by-side fashon.
   - *Included in this repository!*
 - [docsify-tabs](https://github.com/jhildenbiddle/docsify-tabs)
-  - Stick content in tabs; saving space in the process
+  - Stick content in tabs; saving space in the process.
   - *Included in this repository*
   - *Note: it messes with markmap a bit*
 - [docsify-copy-code](https://github.com/jperasmus/docsify-copy-code)
-  - Copy your own codeblocks easily!
+  - Copy your own codeblocks easily.
   - *Included in this repository!*
 - [docsify-corner](https://github.com/Koooooo-7/docsify-corner)
-  - Customize the top-right corner even more!
+  - Customize the top-right corner.
 - [docsify-darklight-theme](https://github.com/boopathikumar018/docsify-darklight-theme)
-  - Darkmode for late-night writing!
+  - Darkmode for late-night writing.
 
 ### Generating mindmaps
 
@@ -66,6 +66,19 @@ Thanks to [markmap.js](https://markmap.js.org/), you can automatically generate 
 There are some caviats with Markmap! It doesn't parse some elements, like text. It also expects your documents to be written without too many issues; like having comments directly ontop of titles.
 
 This file is should be fully compatible with markmap!
+
+### Deploying on Docker
+
+You can build and deploy this repository using Docker by running
+
+```sh
+$ docker build -t notes:latest . #build the image
+$ docker run --rm --name notes -d -p 80:80 notes:latest #container is running on host:80. It'll remove itself if it stops running
+```
+
+#### GitLab CI
+
+There's an included GitLab CI file in the repository which builds, pushes to a GitLab registry and deploys it on a server using `curl`. This might be useful if you're able to host your notes somewhere using Docker.
 
 ## Contributing
 
